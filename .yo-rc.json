@@ -1,0 +1,33 @@
+{
+  "generator-ngx-rocket": {
+    "version": "9.2.0",
+    "props": {
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "appName": "issues app",
+      "target": [
+        "web"
+      ],
+      "pwa": false,
+      "ui": "material",
+      "layout": "simple",
+      "auth": false,
+      "lazy": false,
+      "angulartics": false,
+      "languages": [
+        "en-US"
+      ],
+      "tools": [],
+      "utility": [],
+      "deploy": "none",
+      "projectName": "issues-app",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": []
+    }
+  }
+}
