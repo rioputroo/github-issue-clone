@@ -1,9 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MediaChange, MediaObserver } from '@angular/flex-layout';
-import { MatSidenav } from '@angular/material/sidenav';
-import { filter } from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
 
-import { UntilDestroy, untilDestroyed } from '@core';
+import { UntilDestroy } from '@core';
 
 @UntilDestroy()
 @Component({
@@ -12,20 +9,8 @@ import { UntilDestroy, untilDestroyed } from '@core';
   styleUrls: ['./shell.component.scss']
 })
 export class ShellComponent implements OnInit {
-
-  @ViewChild('sidenav', { static: false }) sidenav!: MatSidenav;
-
-  constructor(private media: MediaObserver) { }
-
   ngOnInit() {
-    // Automatically close side menu on screens > sm breakpoint
-    this.media
-      .asObservable()
-      .pipe(
-        filter((changes: MediaChange[]) => changes.some(change => change.mqAlias !== 'xs' && change.mqAlias !== 'sm')),
-        untilDestroyed(this)
-      )
-      .subscribe(() => this.sidenav.close());
+
   }
 
 }

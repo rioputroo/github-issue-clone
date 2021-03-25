@@ -140,5 +140,8 @@
       }
     }
   },
-  "defaultProject": "issues-app"
+  "defaultProject": "issues-app",
+  "cli": {
+    "analytics": false
+  }
 }

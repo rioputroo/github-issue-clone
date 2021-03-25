@@ -1,14 +1,7 @@
-<div class="container">
-  <mat-card>
-    <p>
-      <img class="logo" src="assets/ngx-rocket-logo.png" alt="angular logo"/>
-    </p>
-    <mat-card-content>
-      <mat-card-title translate>Hello world !</mat-card-title>
-      <mat-card-subtitle>
-        <app-loader [isLoading]="isLoading" size="1.5"></app-loader>
-        <q [hidden]="isLoading">{{quote}}</q>
-      </mat-card-subtitle>
-    </mat-card-content>
-  </mat-card>
+<div fxFlex>
+  <app-issue-header [repoName]="repoName"></app-issue-header>
+  <app-issue-search></app-issue-search>
+  <app-issue-status [totalOpenIssues]="totalOpenIssues"></app-issue-status>
+  <app-issue-lists [listIssues]="listIssues" [linkHeaders]="linkHeaders"></app-issue-lists>
 </div>
+

@@ -1,0 +1,35 @@
+<div class="list-issues" *ngIf="listMode">
+  <ul>
+    <li *ngFor="let issue of listIssues">
+      <a (click)="getIssueDetails(issue.number)">{{issue.title}}</a>
+    </li>
+  </ul>
+</div>
+
+<div class="bottom-container" style="display: flex; flex-direction: row; align-items: flex-start;" *ngIf="!listMode">
+  <div class="detail-issues">
+    <button (click)="backToList()">Back</button>
+
+    <div class="issue-info">
+      <h2>{{issueDetails.title}}#{{issueDetails.number}}</h2>
+    </div>
+
+    <div class="detail-labels" style="display: flex;" *ngIf="issueLabels.length > 0">
+    <span class="label"
+          style="border-radius: 8px; text-align: center; margin: 4px; padding: 0 8px;"
+          *ngFor="let labels of issueLabels"
+          [ngStyle]="{'background-color': '#'+labels.color }">
+      {{labels.name}}
+    </span>
+    </div>
+
+    <div class="issue-state">
+      <h4>{{issueDetails.state}}</h4>
+    </div>
+
+    <div class="issue-body">
+      <p [innerHTML]="issueDetails.body"></p>
+    </div>
+
+  </div>
+</div>
